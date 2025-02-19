@@ -4,7 +4,7 @@
 
 
 
-    <item android:drawable="@drawable/welcome" />
+    <item android:drawable="@drawable/welcome"/>
 
     <item>
         <shape android:shape="rectangle">

@@ -5,4 +5,13 @@
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_onboarding_explore_now">Explore Now</string>
+    <string name="first_onboarding_get_access">Get access to a huge library of movies to suit all tastes. You will surely like it.</string>
+    <string name="first_onboarding_find_your_next">Find Your Next Favorite Movie Here</string>
+    <string name="next">Next</string>
+    <string name="second_onboarding_explore_a">Explore a vast collection of movies in all qualities and genres. Find your next favorite film with ease.</string>
+    <string name="second_onboarding_discover_movies">Discover Movies</string>
+    <string name="third_onboarding_explore_all_genres">Explore All Genres</string>
+    <string name="third_onboarding_discover_movies">Discover movies from every genre, in all available qualities. Find something new and exciting to watch every day.</string>
+    <string name="back">Back</string>
 </resources>

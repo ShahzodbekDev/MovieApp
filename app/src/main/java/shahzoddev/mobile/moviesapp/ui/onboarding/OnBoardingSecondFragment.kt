@@ -7,27 +7,30 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import shahzoddev.mobile.moviesapp.R
-import shahzoddev.mobile.moviesapp.databinding.FragmentOnboardingFirstBinding
+import shahzoddev.mobile.moviesapp.databinding.FragmentOnboardingSecondBinding
 
 
-class OnBoardingFirstFragment : Fragment() {
+class OnBoardingSecondFragment : Fragment() {
 
-    private lateinit var binding: FragmentOnboardingFirstBinding
+    private lateinit var binding: FragmentOnboardingSecondBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentOnboardingFirstBinding.inflate(inflater)
+       binding = FragmentOnboardingSecondBinding.inflate(inflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonExploreNow.setOnClickListener {
-            findNavController().navigate(R.id.action_onBoardingFirstFragment_to_onBoardingSecondFragment)
-        }
+        binding.next.setOnClickListener {
 
+            findNavController().navigate(R.id.action_onBoardingSecondFragment_to_onBoardingThirdFragment)
+
+        }
     }
+
+
 }
