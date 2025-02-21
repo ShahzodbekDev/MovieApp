@@ -1,38 +1,33 @@
-package shahzoddev.mobile.moviesapp.ui.splash
+package shahzoddev.mobile.moviesapp.ui.register
 
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import shahzoddev.mobile.moviesapp.databinding.FragmentSplashBinding
+import shahzoddev.mobile.moviesapp.R
+import shahzoddev.mobile.moviesapp.databinding.FragmentRegisterBinding
 
 
-class SplashFragment : Fragment() {
+class RegisterFragment : Fragment() {
 
-    private lateinit var binding: FragmentSplashBinding
+    private lateinit var binding: FragmentRegisterBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSplashBinding.inflate(inflater)
+        binding = FragmentRegisterBinding.inflate(inflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Handler().postDelayed({
-            findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToOnBoardingFirstFragment())
-
-        }, 3000)
-
-        findNavController().popBackStack()
-
+        binding.toLogin.setOnClickListener {
+            findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
+        }
     }
-
 
 }

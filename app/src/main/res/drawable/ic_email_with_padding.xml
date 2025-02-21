@@ -1,0 +1,6 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/email_ic"
+        android:left="19dp"
+        android:right="16dp" />
+</layer-list>

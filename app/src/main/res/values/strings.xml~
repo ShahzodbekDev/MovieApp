@@ -34,5 +34,4 @@
     <string name="fragment_register_password">Password</string>
     <string name="fragment_register_confirm_password">Confirm Password</string>
     <string name="fragment_register_phone">Phone</string>
-    <string name="register">Register</string>
 </resources>

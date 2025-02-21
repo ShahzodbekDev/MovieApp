@@ -6,18 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import shahzoddev.mobile.moviesapp.databinding.FragmentOnboardingSecondBinding
+import shahzoddev.mobile.moviesapp.databinding.FragmentOnboardingFourthBinding
 
 
-class OnBoardingSecondFragment : Fragment() {
+class OnBoardingFourthFragment : Fragment() {
 
-    private lateinit var binding: FragmentOnboardingSecondBinding
+    private lateinit var binding: FragmentOnboardingFourthBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentOnboardingSecondBinding.inflate(inflater)
+        binding = FragmentOnboardingFourthBinding.inflate(inflater)
         return binding.root
     }
 
@@ -25,11 +25,12 @@ class OnBoardingSecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.next.setOnClickListener {
+            findNavController().navigate(OnBoardingFourthFragmentDirections.actionOnBoardingFourthFragmentToOnBoardingFifthFragment())
+        }
 
-            findNavController().navigate(OnBoardingSecondFragmentDirections.actionOnBoardingSecondFragmentToOnBoardingThirdFragment())
-
+        binding.back.setOnClickListener {
+            requireActivity().finish()
         }
     }
-
 
 }

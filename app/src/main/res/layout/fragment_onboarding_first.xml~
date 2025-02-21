@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="16dp"
-        android:background="@drawable/button_background"
+        android:background="@drawable/onboarding_button_background"
         android:fontFamily="@font/inter_semibold"
         android:text="@string/first_onboarding_explore_now"
         app:backgroundTint="@null"

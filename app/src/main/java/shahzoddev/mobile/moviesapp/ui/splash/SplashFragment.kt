@@ -27,9 +27,8 @@ class SplashFragment : Fragment() {
 
         Handler().postDelayed({
             findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToOnBoardingFirstFragment())
+
         }, 3000)
-
-
 
     }
 

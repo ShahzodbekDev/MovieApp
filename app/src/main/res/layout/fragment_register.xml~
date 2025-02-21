@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    tools:context=".ui.register.RegisterFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="@color/app_bg"
+        android:fontFamily="@font/roboto_bold"
+        android:padding="0dp"
+        app:icon="@drawable/back_ic"
+        app:iconTint="@color/app_color"
+        android:textAllCaps="false"
+        android:textColor="@color/app_color"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:textSize="14sp"
+        app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:textColor="@color/app_color"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto_regular"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@id/back"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/app_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerText" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/namelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="18dp"
+            android:hint="@string/fragment_register_name"
+            android:textColorHint="@color/text_color"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/emaillayout"
+            app:startIconDrawable="@drawable/ic_name_with_padding"
+            app:startIconTint="@color/text_color"
+            tools:layout_editor_absoluteX="32dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_field_background"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="textPersonName"
+                android:paddingStart="66dp"
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                app:hintTextColor="@color/text_color"
+                tools:ignore="RtlSymmetry" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emaillayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="18dp"
+            android:hint="@string/fragment_register_email"
+            android:textColorHint="@color/text_color"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/passwordLayout"
+            app:startIconDrawable="@drawable/ic_email_with_padding"
+            app:startIconTint="@color/text_color"
+            tools:layout_editor_absoluteX="32dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_field_background"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="textEmailAddress"
+                android:paddingStart="66dp"
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                app:hintTextColor="@color/text_color"
+                tools:ignore="RtlSymmetry" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="18dp"
+            android:hint="@string/fragment_register_password"
+            android:textColorHint="@color/text_color"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/text_color"
+            app:layout_constraintBottom_toTopOf="@+id/confirmPasswordLayout"
+            app:startIconDrawable="@drawable/ic_password_with_padding"
+            app:startIconTint="@color/text_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_field_background"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="textPassword"
+                android:paddingStart="66dp"
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                tools:ignore="RtlSymmetry" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/confirmPasswordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="18dp"
+            android:hint="@string/fragment_register_confirm_password"
+            android:textColorHint="@color/text_color"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/text_color"
+            app:layout_constraintBottom_toTopOf="@+id/phoneLayout"
+            app:startIconDrawable="@drawable/ic_password_with_padding"
+            app:startIconTint="@color/text_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_field_background"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="textPassword"
+                android:paddingStart="66dp"
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                tools:ignore="RtlSymmetry" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/phoneLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="29dp"
+            android:hint="@string/fragment_register_phone"
+            android:textColorHint="@color/text_color"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/text_color"
+            app:layout_constraintBottom_toTopOf="@+id/login"
+            app:startIconDrawable="@drawable/ic_phone_with_padding"
+            app:startIconTint="@color/text_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_field_background"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="phone"
+                android:paddingStart="66dp"
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                tools:ignore="RtlSymmetry" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@color/app_bg"
+            android:textSize="17sp"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/alreadyHaveAccount" />
+
+        <LinearLayout
+            android:id="@+id/alreadyHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/alreadyHaveAccountText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/already_have_account"
+                android:textAlignment="center"
+                android:textColor="@color/text_color" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/toLogin"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:background="@color/app_bg"
+                android:fontFamily="@font/roboto_bold"
+                android:padding="0dp"
+                android:text="@string/toLogin"
+                android:textAllCaps="false"
+                android:textColor="@color/app_color"
+                android:textSize="14sp"
+                app:backgroundTint="@null"
+                app:layout_constraintBaseline_toBaselineOf="@id/alreadyHaveAccountText"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
