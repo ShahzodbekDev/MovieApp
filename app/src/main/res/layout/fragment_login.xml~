@@ -161,7 +161,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="50dp"
             android:hint="@string/fragment_login_password"
             android:textColorHint="@color/text_color"
             app:boxStrokeWidth="0dp"
@@ -187,7 +187,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/forgetPassword"
+            android:id="@+id/toRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/app_bg"
@@ -198,6 +198,7 @@
             android:textColor="@color/app_color"
             android:textSize="14sp"
             app:backgroundTint="@null"
+
             app:layout_constraintEnd_toEndOf="@+id/passwordLayout"
             app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
 

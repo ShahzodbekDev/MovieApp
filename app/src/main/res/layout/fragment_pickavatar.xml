@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    tools:context=".ui.register.PickAvatarFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/app_bg"
+        android:fontFamily="@font/roboto_bold"
+        android:padding="0dp"
+        android:textAllCaps="false"
+        android:textColor="@color/app_color"
+        android:textSize="14sp"
+        app:backgroundTint="@null"
+        app:icon="@drawable/back_ic"
+        app:iconTint="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/pick_avatar"
+        android:textAlignment="center"
+        android:textColor="@color/app_color"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/back" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/app_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerText" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/card1"
+                    android:layout_width="116dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/pick_avatar_background"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/pick_avatar1" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card2"
+                    android:layout_width="116dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/pick_avatar_background"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/pick_avatar2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card3"
+                    android:layout_width="116dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/pick_avatar_background"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/pick_avatar3" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card4"
+                    android:layout_width="116dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/pick_avatar_background"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/pick_avatar4" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card5"
+                    android:layout_width="116dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/pick_avatar_background"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/pick_avatar5" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card6"
+                    android:layout_width="116dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/pick_avatar_background"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/pick_avatar6" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card7"
+                    android:layout_width="116dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/pick_avatar_background"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="MissingConstraints">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/pick_avatar7" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card8"
+                    android:layout_width="116dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/pick_avatar_background"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="MissingConstraints">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/pick_avatar8" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card9"
+                    android:layout_width="116dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/pick_avatar_background"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="MissingConstraints">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/pick_avatar9" />
+
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:id="@+id/flow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:constraint_referenced_ids="card1,card2,card3,card4,card5,card6, card7, card8, card9"
+                    app:flow_horizontalAlign="center"
+                    app:flow_verticalAlign="top"
+                    app:flow_verticalGap="20dp"
+                    app:flow_wrapMode="chain"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@color/app_bg"
+            android:textSize="17sp"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

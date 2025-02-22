@@ -118,6 +118,18 @@
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_registerFragment_to_pickAvatarFragment"
+            app:destination="@id/pickAvatarFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
+    <fragment
+        android:id="@+id/pickAvatarFragment"
+        android:name="shahzoddev.mobile.moviesapp.ui.register.PickAvatarFragment"
+        android:label="fragment_pickavatar"
+        tools:layout="@layout/fragment_pickavatar" />
 </navigation>

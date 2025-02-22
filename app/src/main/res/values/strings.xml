@@ -35,4 +35,6 @@
     <string name="fragment_register_confirm_password">Confirm Password</string>
     <string name="fragment_register_phone">Phone</string>
     <string name="register">Register</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="pick_avatar">Pick Avatar</string>
 </resources>
