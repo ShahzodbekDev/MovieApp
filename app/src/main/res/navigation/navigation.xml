@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@+id/loginFragment">
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="shahzoddev.mobile.moviesapp.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@+id/splashFragment">
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -110,6 +104,9 @@
             app:destination="@id/registerFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswprdFragment"
+            app:destination="@id/forgotPasswprdFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -132,4 +129,21 @@
         android:name="shahzoddev.mobile.moviesapp.ui.register.PickAvatarFragment"
         android:label="fragment_pickavatar"
         tools:layout="@layout/fragment_pickavatar" />
+    <navigation android:id="@+id/navigation3"
+        app:startDestination="@id/navigation2">
+        <navigation
+            android:id="@+id/navigation2"
+            app:startDestination="@id/navigation_home">
+            <fragment
+                android:id="@+id/navigation_home"
+                android:name="shahzoddev.mobile.moviesapp.ui.home.HomeFragment"
+                android:label="@string/title_home"
+                tools:layout="@layout/fragment_home" />
+        </navigation>
+    </navigation>
+    <fragment
+        android:id="@+id/forgotPasswprdFragment"
+        android:name="shahzoddev.mobile.moviesapp.ui.forgetpassword.ForgotPasswprdFragment"
+        android:label="fragment_forgotpasswprd"
+        tools:layout="@layout/fragment_forgotpasswprd" />
 </navigation>

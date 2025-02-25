@@ -60,7 +60,7 @@
             android:layout_height="0dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/login"
+            app:layout_constraintBottom_toTopOf="@+id/verifyEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -70,8 +70,8 @@
 
                 <LinearLayout
                     android:id="@+id/card1"
-                    android:layout_width="116dp"
-                    android:layout_height="113dp"
+                    android:layout_width="106dp"
+                    android:layout_height="103dp"
                     android:background="@drawable/pick_avatar_background"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -86,8 +86,8 @@
 
                 <LinearLayout
                     android:id="@+id/card2"
-                    android:layout_width="116dp"
-                    android:layout_height="113dp"
+                    android:layout_width="106dp"
+                    android:layout_height="103dp"
                     android:background="@drawable/pick_avatar_background"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -101,8 +101,8 @@
 
                 <LinearLayout
                     android:id="@+id/card3"
-                    android:layout_width="116dp"
-                    android:layout_height="113dp"
+                    android:layout_width="106dp"
+                    android:layout_height="103dp"
                     android:background="@drawable/pick_avatar_background"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -117,8 +117,8 @@
 
                 <LinearLayout
                     android:id="@+id/card4"
-                    android:layout_width="116dp"
-                    android:layout_height="113dp"
+                    android:layout_width="106dp"
+                    android:layout_height="103dp"
                     android:background="@drawable/pick_avatar_background"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -133,8 +133,8 @@
 
                 <LinearLayout
                     android:id="@+id/card5"
-                    android:layout_width="116dp"
-                    android:layout_height="113dp"
+                    android:layout_width="106dp"
+                    android:layout_height="103dp"
                     android:background="@drawable/pick_avatar_background"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -148,8 +148,8 @@
 
                 <LinearLayout
                     android:id="@+id/card6"
-                    android:layout_width="116dp"
-                    android:layout_height="113dp"
+                    android:layout_width="106dp"
+                    android:layout_height="103dp"
                     android:background="@drawable/pick_avatar_background"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -164,8 +164,8 @@
 
                 <LinearLayout
                     android:id="@+id/card7"
-                    android:layout_width="116dp"
-                    android:layout_height="113dp"
+                    android:layout_width="106dp"
+                    android:layout_height="103dp"
                     android:background="@drawable/pick_avatar_background"
                     android:gravity="center"
                     android:orientation="vertical"
@@ -181,8 +181,8 @@
 
                 <LinearLayout
                     android:id="@+id/card8"
-                    android:layout_width="116dp"
-                    android:layout_height="113dp"
+                    android:layout_width="106dp"
+                    android:layout_height="103dp"
                     android:background="@drawable/pick_avatar_background"
                     android:gravity="center"
                     android:orientation="vertical"
@@ -198,8 +198,8 @@
 
                 <LinearLayout
                     android:id="@+id/card9"
-                    android:layout_width="116dp"
-                    android:layout_height="113dp"
+                    android:layout_width="106dp"
+                    android:layout_height="103dp"
                     android:background="@drawable/pick_avatar_background"
                     android:gravity="center"
                     android:orientation="vertical"
@@ -219,8 +219,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:constraint_referenced_ids="card1,card2,card3,card4,card5,card6, card7, card8, card9"
-                    app:flow_horizontalAlign="center"
-                    app:flow_verticalAlign="top"
+
+
                     app:flow_verticalGap="20dp"
                     app:flow_wrapMode="chain"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -232,13 +232,13 @@
         </FrameLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/login"
+            android:id="@+id/verifyEmail"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginHorizontal="16dp"
             android:background="@drawable/button_background"
             android:fontFamily="@font/roboto_regular"
-            android:text="@string/login"
+            android:text="@string/verifyEmail"
             android:textAllCaps="false"
             android:textColor="@color/app_bg"
             android:textSize="17sp"

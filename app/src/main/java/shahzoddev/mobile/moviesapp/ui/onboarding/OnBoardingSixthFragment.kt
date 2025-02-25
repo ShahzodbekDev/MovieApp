@@ -1,38 +1,47 @@
 package shahzoddev.mobile.moviesapp.ui.onboarding
 
+import android.content.ContentValues
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import shahzoddev.mobile.moviesapp.databinding.FragmentOnboardingSixthBinding
+import shahzoddev.mobile.moviesapp.sqlitedatabase.SQLiteHelper
+import shahzoddev.mobile.moviesapp.util.BaseFragment
 
 
-class OnBoardingSixthFragment : Fragment() {
+class OnBoardingSixthFragment : BaseFragment<FragmentOnboardingSixthBinding>(FragmentOnboardingSixthBinding::inflate) {
 
-    private lateinit var binding: FragmentOnboardingSixthBinding
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentOnboardingSixthBinding.inflate(inflater)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initUI()
+    }
+
+    private fun initUI() = with(binding) {
 
 
-        binding.finish.setOnClickListener {
+        finish.setOnClickListener {
+            updateOnBoarding()
             findNavController().navigate(OnBoardingSixthFragmentDirections.actionOnBoardingSixthFragmentToLoginFragment())
         }
 
-        binding.back.setOnClickListener {
+        back.setOnClickListener {
             requireActivity().finish()
         }
+
     }
+    private fun updateOnBoarding() {
+        val dbHelper = SQLiteHelper(requireContext())
+        val db = dbHelper.writableDatabase
+
+        val contentValues = ContentValues().apply {
+            put("onBoarding", 1)
+        }
+
+        db.update("users", contentValues, null, null)
+        db.close()
+    }
+
 
 }
