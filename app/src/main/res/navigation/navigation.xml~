@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@+id/homeFragment">
+    app:startDestination="@+id/splashFragment">
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -141,9 +141,4 @@
         android:name="shahzoddev.mobile.moviesapp.ui.forgetpassword.ForgotPasswprdFragment"
         android:label="fragment_forgotpasswprd"
         tools:layout="@layout/fragment_forgotpasswprd" />
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="shahzoddev.mobile.moviesapp.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
 </navigation>

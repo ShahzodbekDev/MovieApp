@@ -39,4 +39,5 @@
     <string name="pick_avatar">Pick Avatar</string>
     <string name="verifyEmail">Verify Email</string>
     <string name="rforgot_password_text">Forgot password</string>
+    <string name="movie_card_rating">%s</string>
 </resources>

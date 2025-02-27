@@ -13,12 +13,20 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         Handler().postDelayed({
-            findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToOnBoardingFirstFragment())
+
+                findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToOnBoardingFirstFragment())
 
         }, 1000)
 
     }
+
+
+
+
+
+
 
 
 }
