@@ -1,11 +1,17 @@
 package shahzoddev.mobile.moviesapp.ui.home
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
+import com.facebook.shimmer.ShimmerFrameLayout
 import shahzoddev.mobile.moviesapp.R
 import shahzoddev.mobile.moviesapp.databinding.FragmentHomeBinding
 import shahzoddev.mobile.moviesapp.ui.home.adapters.BannerAdapter
@@ -25,9 +31,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private lateinit var autoScrollHandler: Handler
     private val autoScrollRunnable = object : Runnable {
         override fun run() {
-            val nextItem = binding.bannerView.currentItem + 1
-            binding.bannerView.setCurrentItem(nextItem, true)
-            autoScrollHandler.postDelayed(this, 3000)
+            val itemCount = bannerAdapter.itemCount
+            if (itemCount > 0) {
+                val nextItem = (binding.bannerView.currentItem + 1) % itemCount
+                binding.bannerView.setCurrentItem(nextItem, true)
+            }
+            autoScrollHandler.postDelayed(this, 3000) // Har 3 soniyada o‘zgartirish
         }
     }
 
@@ -38,9 +47,42 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
         moviesViewModel = ViewModelProvider(this)[MoviesViewModel::class.java]
 
+
         initUI()
 
-        moviesViewModel.loadBannerMovies()
+
+        val shimmerLayout = binding.homeShimmerEffect
+        shimmerLayout.apply {
+            startShimmer()
+            visibility = View.VISIBLE
+        }
+
+
+        binding.home.visibility = View.GONE
+
+
+        moviesViewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            if (isLoading) {
+                shimmerLayout.apply {
+                    startShimmer()
+                    visibility = View.VISIBLE
+                }
+                binding.home.visibility = View.GONE
+            }
+        }
+
+
+        moviesViewModel.bannerList.observe(viewLifecycleOwner) { movies ->
+            if (!movies.isNullOrEmpty()) {
+                shimmerLayout.apply {
+                    stopShimmer()
+                    visibility = View.GONE
+                }
+                binding.home.visibility = View.VISIBLE
+                bannerAdapter.updateData(movies)
+            }
+        }
+
 
         autoScrollHandler = Handler(Looper.getMainLooper())
     }
@@ -83,9 +125,26 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                     autoScrollHandler.postDelayed(autoScrollRunnable, 3000)
                 }
             })
-
-
         }
+
+        bannerView.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+
+                val currentBanner = bannerAdapter.getItem(position)
+
+                Glide.with(requireContext())
+                    .load(currentBanner.poster)
+                    .transition(DrawableTransitionOptions.withCrossFade(1000))
+                    .into(object : CustomTarget<Drawable>() {
+                        override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
+                            binding.bannerLayout.background = resource
+                        }
+
+                        override fun onLoadCleared(placeholder: Drawable?) {}
+                    })
+            }
+        })
 
 
 

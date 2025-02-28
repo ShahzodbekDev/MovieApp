@@ -40,6 +40,11 @@ data class MovieResult(
     val year: String
 )
 
+data class GenresResult(
+    val id: Int,
+    val name: String
+)
+
 
 
 

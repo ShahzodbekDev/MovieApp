@@ -40,4 +40,8 @@
     <string name="verifyEmail">Verify Email</string>
     <string name="rforgot_password_text">Forgot password</string>
     <string name="movie_card_rating">%s</string>
+    <string name="home_fragment_movies">Movies</string>
+    <string name="home_fragment_see_more">See More</string>
+    <string name="card_genres">%s</string>
+    <string name="home_fragment_genres">Genres</string>
 </resources>

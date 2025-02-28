@@ -10,7 +10,4 @@ interface ApiService {
 
     @GET("movies/{id}")
     suspend fun getMovie(@Path("id") id: Int): MovieResult
-
-    @GET("genres")
-    suspend fun listGenres(): GenresResult
 }

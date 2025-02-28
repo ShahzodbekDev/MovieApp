@@ -2,13 +2,11 @@ package shahzoddev.mobile.moviesapp.ui.home.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import shahzoddev.mobile.moviesapp.R
 import shahzoddev.mobile.moviesapp.api.model.MovieListResult
 import shahzoddev.mobile.moviesapp.databinding.ItemBannerBinding
-import shahzoddev.mobile.moviesapp.domain.Banner
 
 class BannerAdapter(
     private var banner: List<MovieListResult>,
@@ -22,7 +20,6 @@ class BannerAdapter(
                 Glide.with(root).load(movie.poster).into(image)
                 rating.text =
                     root.context.getString(R.string.movie_card_rating, movie.imdb_rating)
-
 
 
             }
@@ -43,10 +40,16 @@ class BannerAdapter(
 
     override fun getItemCount() = banner.size
 
+    fun getItem(position: Int): MovieListResult {
+        return banner[position]
+    }
+
+
     fun updateData(newList: List<MovieListResult>) {
         banner = newList
         notifyDataSetChanged()
     }
+
 
 
 }
