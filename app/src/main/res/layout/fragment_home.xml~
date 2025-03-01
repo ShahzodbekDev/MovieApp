@@ -23,7 +23,6 @@
     <ScrollView
         android:id="@+id/home"
         android:layout_width="match_parent"
-        android:overScrollMode="never"
         android:layout_height="match_parent">
 
 

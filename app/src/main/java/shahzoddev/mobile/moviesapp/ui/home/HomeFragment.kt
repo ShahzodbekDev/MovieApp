@@ -4,19 +4,22 @@ import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
-import com.facebook.shimmer.ShimmerFrameLayout
 import shahzoddev.mobile.moviesapp.R
 import shahzoddev.mobile.moviesapp.databinding.FragmentHomeBinding
 import shahzoddev.mobile.moviesapp.ui.home.adapters.BannerAdapter
+import shahzoddev.mobile.moviesapp.ui.home.adapters.GenresAdapter
 import shahzoddev.mobile.moviesapp.util.BaseFragment
 import shahzoddev.mobile.moviesapp.util.HorizontalMarginItemDecoration
+import shahzoddev.mobile.moviesapp.util.OverscrollUtil
 import shahzoddev.mobile.moviesapp.viewModel.MoviesViewModel
 import kotlin.math.abs
 
@@ -25,6 +28,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
 
     private lateinit var bannerAdapter: BannerAdapter
+    private lateinit var genresAdapter: GenresAdapter
     private lateinit var moviesViewModel: MoviesViewModel
 
 
@@ -46,7 +50,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
 
         moviesViewModel = ViewModelProvider(this)[MoviesViewModel::class.java]
-
+        moviesViewModel.loadMovies()
+        moviesViewModel.loadGenres()
 
         initUI()
 
@@ -72,16 +77,32 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         }
 
 
-        moviesViewModel.bannerList.observe(viewLifecycleOwner) { movies ->
+        fun stopShimmerAndShowContent() {
+            shimmerLayout.apply {
+                stopShimmer()
+                visibility = View.GONE
+            }
+            binding.home.apply {
+                visibility = View.VISIBLE
+                OverscrollUtil.enableScrollViewOverscroll(this)
+            }
+
+        }
+
+        moviesViewModel.movies.observe(viewLifecycleOwner) { movies ->
             if (!movies.isNullOrEmpty()) {
-                shimmerLayout.apply {
-                    stopShimmer()
-                    visibility = View.GONE
-                }
-                binding.home.visibility = View.VISIBLE
+                stopShimmerAndShowContent()
                 bannerAdapter.updateData(movies)
             }
         }
+
+        moviesViewModel.genres.observe(viewLifecycleOwner) { genres ->
+            if (!genres.isNullOrEmpty()) {
+                stopShimmerAndShowContent()
+                genresAdapter.updateData(genres)
+            }
+        }
+
 
 
         autoScrollHandler = Handler(Looper.getMainLooper())
@@ -89,6 +110,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
 
     private fun initUI() = with(binding) {
+
+
 
         bannerView.offscreenPageLimit = 1
 
@@ -110,8 +133,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         bannerView.addItemDecoration(itemDecoration)
 
 
-        bannerAdapter = BannerAdapter(emptyList())
 
+        bannerAdapter = BannerAdapter(emptyList())
 
         bannerView.apply {
             adapter = bannerAdapter
@@ -146,11 +169,23 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             }
         })
 
+        genresAdapter = GenresAdapter(emptyList())
+        genresList.apply {
+            adapter = genresAdapter
+            OverscrollUtil.enableRecyclerViewOverscroll(this, true)
+        }
 
 
-        moviesViewModel.bannerList.observe(viewLifecycleOwner) { movies ->
+
+        moviesViewModel.movies.observe(viewLifecycleOwner) { movies ->
             bannerAdapter.updateData(movies)
         }
+        moviesViewModel.genres.observe(viewLifecycleOwner) { genres ->
+            genresAdapter.updateData(genres)
+        }
     }
+
+
+
 
 }

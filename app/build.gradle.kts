@@ -70,5 +70,7 @@ dependencies {
     //Facebook Shimmer
     implementation ("com.facebook.shimmer:shimmer:0.5.0")
 
+    //ovelscroll-decor
+    implementation ("io.github.everythingme:overscroll-decor-android:1.1.1")
 
 }
