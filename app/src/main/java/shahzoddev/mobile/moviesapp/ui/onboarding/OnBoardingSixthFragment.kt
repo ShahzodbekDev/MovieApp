@@ -5,6 +5,7 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import shahzoddev.mobile.moviesapp.databinding.FragmentOnboardingSixthBinding
 import shahzoddev.mobile.moviesapp.util.BaseFragment
+import shahzoddev.mobile.moviesapp.util.finishActivity
 
 
 class OnBoardingSixthFragment :
@@ -14,21 +15,17 @@ class OnBoardingSixthFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initUI()
-    }
-
-    private fun initUI() = with(binding) {
-
-
-        finish.setOnClickListener {
+       binding.finish.setOnClickListener {
             findNavController().navigate(OnBoardingSixthFragmentDirections.actionOnBoardingSixthFragmentToLoginFragment())
         }
 
-        back.setOnClickListener {
-            requireActivity().finish()
+        binding.back.setOnClickListener {
+            finishActivity()
         }
 
     }
+
+
 
 
 }

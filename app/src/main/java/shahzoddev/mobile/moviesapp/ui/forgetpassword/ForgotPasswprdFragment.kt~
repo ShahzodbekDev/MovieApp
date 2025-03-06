@@ -1,26 +1,18 @@
 package shahzoddev.mobile.moviesapp.ui.forgetpassword
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import shahzoddev.mobile.moviesapp.R
 import shahzoddev.mobile.moviesapp.databinding.FragmentForgotpasswprdBinding
+import shahzoddev.mobile.moviesapp.util.BaseFragment
+import shahzoddev.mobile.moviesapp.util.blockOrientation
 
 
-class ForgotPasswprdFragment : Fragment() {
+class ForgotPasswprdFragment : BaseFragment<FragmentForgotpasswprdBinding>(FragmentForgotpasswprdBinding::inflate) {
 
 
-    private lateinit var binding: FragmentForgotpasswprdBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentForgotpasswprdBinding.inflate(inflater)
-        return binding.root
-    }
 
 
 }

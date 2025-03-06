@@ -5,6 +5,7 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import shahzoddev.mobile.moviesapp.databinding.FragmentOnboardingFifthBinding
 import shahzoddev.mobile.moviesapp.util.BaseFragment
+import shahzoddev.mobile.moviesapp.util.finishActivity
 
 
 class OnBoardingFifthFragment : BaseFragment<FragmentOnboardingFifthBinding>(FragmentOnboardingFifthBinding::inflate) {
@@ -20,7 +21,7 @@ class OnBoardingFifthFragment : BaseFragment<FragmentOnboardingFifthBinding>(Fra
 
 
         binding.back.setOnClickListener {
-            requireActivity().finish()
+            finishActivity()
         }
     }
 

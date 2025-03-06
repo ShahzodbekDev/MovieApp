@@ -5,10 +5,10 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import shahzoddev.mobile.moviesapp.databinding.FragmentOnboardingFourthBinding
 import shahzoddev.mobile.moviesapp.util.BaseFragment
+import shahzoddev.mobile.moviesapp.util.finishActivity
 
 
 class OnBoardingFourthFragment : BaseFragment<FragmentOnboardingFourthBinding>(FragmentOnboardingFourthBinding::inflate) {
-
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -19,7 +19,7 @@ class OnBoardingFourthFragment : BaseFragment<FragmentOnboardingFourthBinding>(F
         }
 
         binding.back.setOnClickListener {
-            requireActivity().finish()
+            finishActivity()
         }
     }
 

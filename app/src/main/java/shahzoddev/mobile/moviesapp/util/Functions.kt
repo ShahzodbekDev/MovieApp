@@ -2,6 +2,7 @@ package shahzoddev.mobile.moviesapp.util
 
 import android.app.Activity
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.os.Build
 import android.view.View
 import android.view.WindowInsetsController
@@ -12,7 +13,7 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 
 
-fun Fragment.toast(message: Int) {
+fun Fragment.toast(message: String) {
     Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
 }
 
@@ -37,6 +38,10 @@ fun Fragment.setLightStatusBar() {
 
 fun Fragment.finishActivity() {
     requireActivity().finish()
+}
+
+fun Fragment.blockOrientation(){
+    requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LOCKED
 }
 
 fun Fragment.clearLightStatusBar() {

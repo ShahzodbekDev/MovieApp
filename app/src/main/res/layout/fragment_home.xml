@@ -23,6 +23,9 @@
     <ScrollView
         android:id="@+id/home"
         android:layout_width="match_parent"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:paddingBottom="120dp"
         android:overScrollMode="never"
         android:layout_height="match_parent">
 
@@ -34,7 +37,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/bannerLayout"
                 android:layout_width="match_parent"
-                android:layout_height="600dp"
+                android:layout_height="500dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -44,7 +47,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:background="@drawable/gradient"
+                    android:background="@drawable/banner_gradient"
                     android:elevation="2dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -63,34 +66,6 @@
 
 
             <TextView
-                android:id="@+id/genresText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_regular"
-                android:text="@string/home_fragment_genres"
-                android:textColor="@color/text_color"
-                android:textSize="20sp"
-                android:layout_marginTop="24dp"
-                android:layout_marginStart="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bannerLayout" />
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/genresList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingHorizontal="16dp"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                android:layout_marginTop="10dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_genres"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/genresText" />
-
-            <TextView
                 android:id="@+id/movieText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,16 +73,16 @@
                 android:text="@string/home_fragment_movies"
                 android:textColor="@color/text_color"
                 android:textSize="20sp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="-24dp"
                 android:layout_marginStart="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/genresList" />
+                app:layout_constraintTop_toBottomOf="@+id/bannerLayout" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/moviesSeeMore"
+                android:id="@+id/seeMore"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:background="@color/app_bg"
+                android:background="#00121312"
                 android:fontFamily="@font/roboto_bold"
                 android:padding="0dp"
                 android:text="@string/home_fragment_see_more"
@@ -119,21 +94,22 @@
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBaseline_toBaselineOf="@id/movieText"
-                app:layout_constraintTop_toBottomOf="@+id/genresList" />
+                app:layout_constraintTop_toBottomOf="@+id/bannerLayout" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/moviesList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="10dp"
                 android:clipChildren="false"
                 android:clipToPadding="false"
-                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_genres"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/movieText" />
+                app:layout_constraintTop_toBottomOf="@+id/movieText"
+                tools:listitem="@layout/item_home_movies" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

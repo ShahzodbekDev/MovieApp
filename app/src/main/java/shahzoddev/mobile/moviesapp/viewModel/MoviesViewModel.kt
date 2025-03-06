@@ -41,11 +41,11 @@ class MoviesViewModel  : ViewModel() {
     }
 
     // Bitta filmni yuklash
-    fun loadMovieById(movieId: Int) {
+    fun loadMovie(id: String) {
         _isLoading.value = true
         viewModelScope.launch {
             delay(1000)
-            val response = repository.getMovieById(movieId)
+            val response = repository.getMovieById(id)
             response?.let {
                 _movieDetails.postValue(it)
             }

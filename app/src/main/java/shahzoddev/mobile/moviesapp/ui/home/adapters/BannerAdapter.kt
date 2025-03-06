@@ -10,6 +10,7 @@ import shahzoddev.mobile.moviesapp.databinding.ItemBannerBinding
 
 class BannerAdapter(
     private var banner: List<MovieListResult>,
+    private val onClick: (movieListResult: MovieListResult) -> Unit
 ) : RecyclerView.Adapter<BannerAdapter.ViewHolder>() {
 
     inner class ViewHolder(private val binding: ItemBannerBinding) :
@@ -18,9 +19,10 @@ class BannerAdapter(
         fun bind(movie: MovieListResult) = with(binding) {
             movie.let {
                 Glide.with(root).load(movie.poster).into(image)
-                rating.text =
-                    root.context.getString(R.string.movie_card_rating, movie.imdb_rating)
+                bannerRating.text =
+                    root.context.getString(R.string.banner_card_rating, movie.imdb_rating)
 
+                root.setOnClickListener { onClick(movie) }
 
             }
         }
@@ -37,6 +39,8 @@ class BannerAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
         holder.bind(banner[position])
+
+
 
     override fun getItemCount() = banner.size
 

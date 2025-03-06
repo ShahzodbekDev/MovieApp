@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    app:cardBackgroundColor="#282A28"
+    app:backgroundTint="@null"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:padding="8dp">  <!-- Margin o'rniga padding ishlatilgan -->
+
+        <TextView
+            android:id="@+id/detialsGenresName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"/>
+</com.google.android.material.card.MaterialCardView>

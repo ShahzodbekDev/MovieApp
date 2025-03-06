@@ -5,6 +5,7 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import shahzoddev.mobile.moviesapp.databinding.FragmentLoginBinding
 import shahzoddev.mobile.moviesapp.util.BaseFragment
+import shahzoddev.mobile.moviesapp.util.blockOrientation
 
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
@@ -12,6 +13,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         binding.toRegister.setOnClickListener{
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegisterFragment())

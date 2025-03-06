@@ -13,7 +13,7 @@ interface MoviesApiService {
 
 
     @GET("movies/{id}")
-    suspend fun getMovieById(@Path("id") movieId: Int): Response<MovieResult>
+    suspend fun getMovieById(@Path("id") id: String): Response<MovieResult>
 
 
     @GET("genres")

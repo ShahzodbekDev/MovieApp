@@ -14,8 +14,6 @@ class OnBoardingFirstFragment : BaseFragment<FragmentOnboardingFirstBinding>(Fra
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        clearLightStatusBar()
-
 
         binding.buttonExploreNow.setOnClickListener {
             findNavController().navigate(OnBoardingFirstFragmentDirections.actionOnBoardingFirstFragmentToOnBoardingSecondFragment())
