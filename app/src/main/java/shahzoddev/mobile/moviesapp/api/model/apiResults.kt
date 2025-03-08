@@ -1,11 +1,5 @@
 package shahzoddev.mobile.moviesapp.api.model
 
-data class AllResults(
-    val moviesApiResult: MoviesApiResponse?,
-    val movieResult: MovieResult?,
-    val genresResult: List<Genre>?
-)
-
 
 data class MoviesApiResponse(
     val data: List<MovieListResult>

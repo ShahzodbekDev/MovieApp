@@ -2,6 +2,8 @@ package shahzoddev.mobile.moviesapp.ui.home
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -49,10 +51,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
 
         moviesViewModel = ViewModelProvider(this)[MoviesViewModel::class.java]
-        moviesViewModel.loadMovies()
+        moviesViewModel.loadMovies(4)
 
         initUI()
 
+
+        binding.swipeRefresh.setOnRefreshListener {
+            refreshData()
+        }
 
         val shimmerLayout = binding.homeShimmerEffect
         shimmerLayout.apply {
@@ -91,6 +97,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             if (!movies.isNullOrEmpty()) {
                 stopShimmerAndShowContent()
                 bannerAdapter.updateData(movies)
+                binding.swipeRefresh.isRefreshing = false
             }
         }
 
@@ -181,6 +188,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     private fun onClick(movie: MovieListResult) {
         findNavController().navigate(HomeFragmentDirections.actionDetialsFragment(movie.id.toString()))
+    }
+
+    private fun refreshData() {
+        moviesViewModel.loadMovies(4)
+
+        binding.bannerView.currentItem = 0
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.swipeRefresh.isRefreshing = false
+        }, 2000)
     }
 
 

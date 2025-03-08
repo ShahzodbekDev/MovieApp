@@ -1,22 +1,35 @@
 package shahzoddev.mobile.moviesapp.api
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import shahzoddev.mobile.moviesapp.api.model.Genre
+import shahzoddev.mobile.moviesapp.api.model.MovieListResult
 import shahzoddev.mobile.moviesapp.api.model.MovieResult
 import shahzoddev.mobile.moviesapp.api.model.MoviesApiResponse
 import shahzoddev.mobile.moviesapp.api.model.RetrofitClient
+import shahzoddev.mobile.moviesapp.api.model.RetrofitClient.apiService
+import shahzoddev.mobile.moviesapp.ui.search.SearchPagingSource
 
 
 class MoviesRepository {
     private val api = RetrofitClient.apiService
 
-    suspend fun getMovies(): MoviesApiResponse? {
-        return withContext(Dispatchers.IO) {
-            val response = api.getMovies()
-            if (response.isSuccessful) response.body() else null
-        }
+
+//    suspend fun getMovies(id: Int): MoviesApiResponse? {
+//        return withContext(Dispatchers.IO) {
+//            val response = api.getMovies(id)
+//            if (response.isSuccessful) response.body() else null
+//        }
+//    }
+
+    suspend fun getMovies(page: Int): MoviesApiResponse? = withContext(Dispatchers.IO) {
+        api.getMovies(page).body().takeIf { it != null }
     }
+
 
     suspend fun getMovieById(id: String): MovieResult? {
         return withContext(Dispatchers.IO) {
@@ -31,4 +44,16 @@ class MoviesRepository {
             if (response.isSuccessful) response.body() else null
         }
     }
+
+
+    fun searchMovies(query: String): Flow<PagingData<MovieListResult>> {
+        return Pager(
+            config = PagingConfig(
+                pageSize = 10,
+                enablePlaceholders = false
+            ),
+            pagingSourceFactory = { SearchPagingSource(apiService, query) }
+        ).flow
+    }
+
 }

@@ -73,4 +73,10 @@ dependencies {
     //ovelscroll-decor
     implementation ("io.github.everythingme:overscroll-decor-android:1.1.1")
 
+    //Paging 3
+    implementation ("androidx.paging:paging-runtime:3.3.6")
+
+    //swiperefreshlayout
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
 }

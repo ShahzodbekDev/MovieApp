@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+        <View
+            android:id="@+id/plcback"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/shimmer_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/plcsave"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/shimmer_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/plcDetialsimageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="545dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/shimmer_color"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/detials_image_gradient">
+
+
+                <View
+                    android:layout_width="97dp"
+                    android:layout_height="97dp"
+                    android:background="@color/shimmer_color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginHorizontal="28dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@color/shimmer_color"
+                    app:layout_constraintBottom_toTopOf="@+id/plcmovieReleased"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/plcmovieReleased"
+                    android:layout_width="70dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="20dp"
+                   android:background="@color/shimmer_color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/plcwatchButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/shimmer_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plcDetialsimageLayout" />
+
+        <View
+            android:id="@+id/plcvoteDurationRating"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:layout_height="40dp"
+            android:background="@color/shimmer_color"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/plcwatchButton" />
+
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/plcscreenShotTitle"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/shimmer_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plcvoteDurationRating" />
+
+        <View
+            android:id="@+id/plcscreenShotLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="14dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/shimmer_color"
+            app:layout_constraintTop_toBottomOf="@+id/plcscreenShotTitle"/>
+
+
+        <View
+            android:id="@+id/plcscreenShotLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:layout_marginVertical="6dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/shimmer_color"
+            app:layout_constraintTop_toBottomOf="@+id/plcscreenShotLayout1"/>
+
+
+        <View
+            android:id="@+id/plcscreenShotLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:layout_marginVertical="6dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/shimmer_color"
+            app:layout_constraintTop_toBottomOf="@+id/plcscreenShotLayout2"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import shahzoddev.mobile.moviesapp.api.MoviesRepository
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
@@ -52,6 +53,7 @@ abstract class BaseFragment<VB : ViewBinding>(
         clearRunnables() // ✅ Fragment yo‘qolayotganda barcha runnable'larni o‘chirish
         _binding = null
     }
+
 
 
 }

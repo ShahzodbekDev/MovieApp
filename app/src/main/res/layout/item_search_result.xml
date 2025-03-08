@@ -3,15 +3,13 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="189dp"
-    android:layout_height="279dp"
-    android:layout_marginVertical="6dp"
-    android:layout_marginEnd="16dp"
+    android:layout_width="160dp"
+    android:layout_height="237dp"
     app:cardCornerRadius="20dp">
 
 
     <TextView
-        android:id="@+id/homeMoviesRating"
+        android:id="@+id/searchResultRating"
         android:layout_width="60dp"
         android:layout_height="30dp"
         android:layout_marginStart="9dp"
@@ -22,13 +20,13 @@
         android:fontFamily="@font/roboto_regular"
         android:paddingHorizontal="9dp"
         android:paddingVertical="5dp"
-        android:text="@string/home_movies_rating"
+        android:text="@string/search_result_rating"
         android:textColor="@color/text_color"
         android:textSize="12sp"
         app:drawableEndCompat="@drawable/ic_star" />
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/searchResultImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"

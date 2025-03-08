@@ -7,6 +7,56 @@
     android:background="@color/app_bg"
     tools:context=".ui.detials.DetialsFragment">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/detialsShimmerEffect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_auto_start="true"
+        app:shimmer_duration="1000">
+
+        <include layout="@layout/detials_placeholder" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backSaveBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="30dp"
+            android:background="#00121312"
+            android:fontFamily="@font/roboto_bold"
+            app:backgroundTint="@null"
+            app:icon="@drawable/detials_back"
+            app:iconTint="@color/text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="12dp"
+            android:background="#00121312"
+            app:backgroundTint="@null"
+            app:icon="@drawable/ic_save"
+            app:iconTint="@color/color_save_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/text_color" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     <ScrollView
         android:id="@+id/detials"
         android:layout_width="match_parent"
@@ -20,36 +70,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/back"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="30dp"
-                android:background="#00121312"
-                android:fontFamily="@font/roboto_bold"
-                app:backgroundTint="@null"
-                app:icon="@drawable/detials_back"
-                app:iconTint="@color/text_color"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/save"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="12dp"
-                android:background="#00121312"
-                app:backgroundTint="@null"
-                app:icon="@drawable/ic_save"
-                app:iconTint="@color/color_save_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:rippleColor="@color/text_color" />
-
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/detialsimageLayout"
+                android:id="@+id/DetialsimageLayout"
                 android:layout_width="match_parent"
                 android:layout_height="545dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -135,13 +157,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detialsimageLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/DetialsimageLayout" />
 
             <LinearLayout
                 android:id="@+id/voteDurationRating"
                 android:layout_width="match_parent"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
                 android:layout_height="wrap_content"
                 android:background="@drawable/detials_vote_duration_rating_background"
                 android:orientation="horizontal"

@@ -61,4 +61,5 @@
     <string name="detials_actors">%s</string>
     <string name="detials_genres">Genres</string>
     <string name="detials_genres_name">%s</string>
+    <string name="search_result_rating">%s</string>
 </resources>
