@@ -9,7 +9,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
         <LinearLayout
-            android:id="@+id/card1"
+            android:id="@+id/dcard1"
             android:layout_width="96dp"
             android:layout_height="93dp"
             android:padding="5dp"
@@ -18,7 +18,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/image1"
+                android:id="@+id/dimage1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/pick_avatar1" />
@@ -27,7 +27,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/card2"
+            android:id="@+id/dcard2"
             android:layout_width="96dp"
             android:layout_height="93dp"
             android:padding="5dp"
@@ -36,7 +36,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/image2"
+                android:id="@+id/dimage2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/pick_avatar2" />
@@ -44,7 +44,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/card3"
+            android:id="@+id/dcard3"
             android:layout_width="96dp"
             android:layout_height="93dp"
             android:padding="5dp"
@@ -53,7 +53,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/image3"
+                android:id="@+id/dimage3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/pick_avatar3" />
@@ -62,7 +62,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/card4"
+            android:id="@+id/dcard4"
             android:layout_width="96dp"
             android:layout_height="93dp"
             android:padding="5dp"
@@ -71,7 +71,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/image4"
+                android:id="@+id/dimage4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/pick_avatar4" />
@@ -80,7 +80,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/card5"
+            android:id="@+id/dcard5"
             android:layout_width="96dp"
             android:layout_height="93dp"
             android:padding="5dp"
@@ -89,7 +89,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/image5"
+                android:id="@+id/dimage5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/pick_avatar5" />
@@ -97,7 +97,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/card6"
+            android:id="@+id/dcard6"
             android:layout_width="96dp"
             android:layout_height="93dp"
             android:padding="5dp"
@@ -106,7 +106,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/image6"
+                android:id="@+id/dimage6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/pick_avatar6" />
@@ -115,7 +115,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/card7"
+            android:id="@+id/dcard7"
             android:layout_width="96dp"
             android:layout_height="93dp"
             android:padding="5dp"
@@ -125,7 +125,7 @@
             tools:ignore="MissingConstraints">
 
             <ImageView
-                android:id="@+id/image7"
+                android:id="@+id/dimage7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/pick_avatar7" />
@@ -134,7 +134,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/card8"
+            android:id="@+id/dcard8"
             android:layout_width="96dp"
             android:layout_height="93dp"
             android:padding="5dp"
@@ -144,7 +144,7 @@
             tools:ignore="MissingConstraints">
 
             <ImageView
-                android:id="@+id/image8"
+                android:id="@+id/dimage8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/pick_avatar8" />
@@ -153,7 +153,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/card9"
+            android:id="@+id/dcard9"
             android:layout_width="96dp"
             android:layout_height="93dp"
             android:padding="5dp"
@@ -163,7 +163,7 @@
             tools:ignore="MissingConstraints">
 
             <ImageView
-                android:id="@+id/image9"
+                android:id="@+id/dimage9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/pick_avatar9" />
@@ -176,7 +176,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:constraint_referenced_ids="card1,card2,card3,card4,card5,card6, card7, card8, card9"
+            app:constraint_referenced_ids="dcard1,dcard2,dcard3,dcard4,dcard5,dcard6, dcard7, dcard8, dcard9"
             app:flow_verticalGap="20dp"
             app:flow_wrapMode="aligned"
             app:layout_constraintBottom_toBottomOf="parent"

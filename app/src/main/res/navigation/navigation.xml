@@ -209,8 +209,5 @@
         android:name="shahzoddev.mobile.moviesapp.ui.user.UpdateProfileFragment"
         android:label="fragment_updateprofile"
         tools:layout="@layout/fragment_updateprofile" >
-        <action
-            android:id="@+id/action_updateProfileFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

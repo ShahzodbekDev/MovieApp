@@ -15,12 +15,12 @@ import shahzoddev.mobile.moviesapp.util.BaseFragment
 class UserFragment : BaseFragment<FragmentUserBinding>(FragmentUserBinding::inflate) {
 
     private lateinit var tabPagerAdapter: TabPagerAdapter
-    private lateinit var preferencesHelper: PreferencesHelper
+    private lateinit var preferences: PreferencesHelper
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        preferencesHelper = PreferencesHelper(requireContext())
+        preferences = PreferencesHelper(requireContext())
 
         initUi()
     }
@@ -39,7 +39,7 @@ class UserFragment : BaseFragment<FragmentUserBinding>(FragmentUserBinding::infl
             R.drawable.pick_avatar9,
         )
 
-        val selectedAvatarId = preferencesHelper.getPickAvatar()
+        val selectedAvatarId = preferences.getPickAvatar()
 
         if (selectedAvatarId in imageList.indices) {
             binding.userAvatar.setImageResource(imageList[selectedAvatarId])
@@ -48,7 +48,7 @@ class UserFragment : BaseFragment<FragmentUserBinding>(FragmentUserBinding::infl
         }
 
 
-        userName.text = preferencesHelper.getUserName()
+        userName.text = preferences.getUserName()
 
         editProfile.setOnClickListener {
             findNavController().navigate(UserFragmentDirections.actionUserFragmentToUpdateProfileFragment())

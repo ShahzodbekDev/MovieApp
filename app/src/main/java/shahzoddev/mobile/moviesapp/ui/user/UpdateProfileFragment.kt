@@ -12,6 +12,8 @@ import shahzoddev.mobile.moviesapp.databinding.UpdateDataPicksDialogBinding
 import shahzoddev.mobile.moviesapp.util.BaseFragment
 import androidx.core.graphics.drawable.toDrawable
 import shahzoddev.mobile.moviesapp.PreferencesHelper
+import shahzoddev.mobile.moviesapp.R
+import shahzoddev.mobile.moviesapp.util.finishActivity
 
 class UpdateProfileFragment : BaseFragment<FragmentUpdateprofileBinding>(
     FragmentUpdateprofileBinding::inflate) {
@@ -40,7 +42,7 @@ class UpdateProfileFragment : BaseFragment<FragmentUpdateprofileBinding>(
 
         deleteAccount.setOnClickListener {
             preferences.clearAll()
-            findNavController().navigate(UpdateProfileFragmentDirections.actionUpdateProfileFragmentToLoginFragment())
+            finishActivity()
         }
         userAvatar.setOnClickListener {
             val dialogViewBinding = UpdateDataPicksDialogBinding.inflate(layoutInflater)
@@ -61,36 +63,71 @@ class UpdateProfileFragment : BaseFragment<FragmentUpdateprofileBinding>(
 
 
             val cardList = listOf(
-                dialogViewBinding.card1 to dialogViewBinding.image1,
-                dialogViewBinding.card2 to dialogViewBinding.image2,
-                dialogViewBinding.card3 to dialogViewBinding.image3,
-                dialogViewBinding.card4 to dialogViewBinding.image4,
-                dialogViewBinding.card5 to dialogViewBinding.image5,
-                dialogViewBinding.card6 to dialogViewBinding.image6,
-                dialogViewBinding.card7 to dialogViewBinding.image7,
-                dialogViewBinding.card8 to dialogViewBinding.image8,
-                dialogViewBinding.card9 to dialogViewBinding.image9,
+                dialogViewBinding.dcard1 to dialogViewBinding.dimage1,
+                dialogViewBinding.dcard2 to dialogViewBinding.dimage2,
+                dialogViewBinding.dcard3 to dialogViewBinding.dimage3,
+                dialogViewBinding.dcard4 to dialogViewBinding.dimage4,
+                dialogViewBinding.dcard5 to dialogViewBinding.dimage5,
+                dialogViewBinding.dcard6 to dialogViewBinding.dimage6,
+                dialogViewBinding.dcard7 to dialogViewBinding.dimage7,
+                dialogViewBinding.dcard8 to dialogViewBinding.dimage8,
+                dialogViewBinding.dcard9 to dialogViewBinding.dimage9,
             )
 
             cardList.forEach { (card, imageView) ->
                 card.setOnClickListener {
+
 
                     cardList.forEach { (c, _) -> c.isSelected = false }
 
 
                     card.isSelected = true
 
-                    userAvatar.setImageDrawable(imageView.drawable)
+                    val selectedCardId = when (card.id) {
+                        R.id.dcard1 -> 1
+                        R.id.dcard2 -> 2
+                        R.id.dcard3 -> 3
+                        R.id.dcard4 -> 4
+                        R.id.dcard5 -> 5
+                        R.id.dcard6 -> 6
+                        R.id.dcard7 -> 7
+                        R.id.dcard8 -> 8
+                        R.id.dcard9 -> 9
+                        else -> 1
+                    }
+                        preferences.setPickAvatar(selectedCardId)
 
+
+
+
+                    userAvatar.setImageDrawable(imageView.drawable)
 
                     dialog.dismiss()
                 }
             }
 
-
             dialog.show()
         }
+
+        val imageList = listOf(
+            R.drawable.pick_avatar1,
+            R.drawable.pick_avatar2,
+            R.drawable.pick_avatar3,
+            R.drawable.pick_avatar4,
+            R.drawable.pick_avatar5,
+            R.drawable.pick_avatar6,
+            R.drawable.pick_avatar7,
+            R.drawable.pick_avatar8,
+            R.drawable.pick_avatar9,
+        )
+
+        val selectedAvatarId = preferences.getPickAvatar()
+
+        if (selectedAvatarId in imageList.indices) {
+            userAvatar.setImageResource(imageList[selectedAvatarId])
+        } else {
+            userAvatar.setImageResource(R.drawable.pick_avatar1)
+        }
+
     }
-
-
 }

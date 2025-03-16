@@ -45,7 +45,6 @@ class PickAvatarFragment :
 
 
                 card.isSelected = true
-
                 val selectedCardId = when (card.id) {
                     R.id.card1 -> 1
                     R.id.card2 -> 2
@@ -56,14 +55,11 @@ class PickAvatarFragment :
                     R.id.card7 -> 7
                     R.id.card8 -> 8
                     R.id.card9 -> 9
-                    else -> -1
+                    else -> 1
                 }
 
-
-                if (selectedCardId != -1) {
                     preferencesHelper.setPickAvatar(selectedCardId)
 
-                }
             }
         }
 
