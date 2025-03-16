@@ -19,7 +19,7 @@
         android:textAllCaps="false"
         android:textColor="@color/app_color"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:textSize="14sp"
         app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:src="@drawable/app_logo"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -192,9 +192,8 @@
             android:textColorHint="@color/text_color"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
-            app:endIconMode="password_toggle"
             app:endIconTint="@color/text_color"
-            app:layout_constraintBottom_toTopOf="@+id/login"
+            app:layout_constraintBottom_toTopOf="@+id/createAccount"
             app:startIconDrawable="@drawable/ic_phone_with_padding"
             app:startIconTint="@color/text_color">
 
@@ -213,14 +212,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/login"
+            android:id="@+id/createAccount"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/button_background"
             android:fontFamily="@font/roboto_regular"
-            android:text="@string/login"
+            android:text="@string/create_account"
             android:textAllCaps="false"
             android:textColor="@color/app_bg"
             android:textSize="17sp"

@@ -1,22 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/teal_700"
+    android:background="#212121"
     tools:context=".ui.user.UserFragment">
 
+
+    <ImageView
+        android:id="@+id/userAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="52dp"
+        android:src="@drawable/pick_avatar8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/text_color"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@+id/userAvatar"
+        app:layout_constraintStart_toStartOf="@+id/userAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/userAvatar" />
+
+    <TextView
+        android:id="@+id/wishListCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="12"
+        android:textColor="@color/text_color"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="@+id/userAvatar"
+        app:layout_constraintStart_toEndOf="@+id/userAvatar"
+        app:layout_constraintTop_toTopOf="@+id/userAvatar" />
+
+    <TextView
+        android:id="@+id/wishListTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Wish List"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/wishListCount"
+        app:layout_constraintStart_toStartOf="@+id/wishListCount"
+        app:layout_constraintTop_toBottomOf="@+id/wishListCount" />
+
+    <TextView
+        android:id="@+id/historyCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="10"
+        android:textColor="@color/text_color"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="@+id/wishListCount"
+        app:layout_constraintStart_toEndOf="@+id/wishListCount"
+        app:layout_constraintTop_toTopOf="@+id/wishListCount" />
+
+    <TextView
+        android:id="@+id/historyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="History"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/historyCount"
+        app:layout_constraintStart_toStartOf="@+id/historyCount"
+        app:layout_constraintTop_toBottomOf="@+id/historyCount" />
+
+    <LinearLayout
+        android:id="@+id/buttonBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="23dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/userName">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editProfile"
+            android:layout_width="213dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/user_edit_profile"
+            android:textAllCaps="false"
+            android:textColor="@color/app_bg"
+            android:textSize="20sp"
+            app:backgroundTint="@null" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/exit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/button_red_background"
+            android:drawableEnd="@drawable/ic_exit"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/user_exit"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            android:textSize="20sp"
+            app:backgroundTint="@null" />
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBlock"
+        app:tabIconTint="@color/app_color"
+        app:tabTextColor="@color/text_color"
+        app:tabGravity="fill"
+        app:tabMode="fixed" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

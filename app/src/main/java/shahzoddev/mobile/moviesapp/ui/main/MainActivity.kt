@@ -5,7 +5,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import shahzoddev.mobile.moviesapp.R
@@ -14,6 +17,9 @@ import shahzoddev.mobile.moviesapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val navController get() = (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,12 +40,30 @@ class MainActivity : AppCompatActivity() {
 
         initUI()
 
+
     }
 
     private fun initUI() = with(binding) {
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        bottomNavigation.setupWithNavController(navHostFragment.navController)
+        bottomNavigation.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            bottomNavigation.isVisible = listOf(
+                R.id.splashFragment,
+                R.id.onBoardingFirstFragment,
+                R.id.onBoardingSecondFragment,
+                R.id.onBoardingThirdFragment,
+                R.id.onBoardingFourthFragment,
+                R.id.onBoardingFifthFragment,
+                R.id.onBoardingSixthFragment,
+                R.id.loginFragment,
+                R.id.registerFragment,
+                R.id.pickAvatarFragment,
+                R.id.forgotPasswprdFragment,
+                R.id.detialsFragment,
+                R.id.updateProfileFragment
+            ).all { it != destination.id }
+        }
 
 
     }

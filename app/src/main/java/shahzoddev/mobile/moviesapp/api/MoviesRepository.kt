@@ -5,6 +5,8 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.withContext
 import shahzoddev.mobile.moviesapp.api.model.Genre
 import shahzoddev.mobile.moviesapp.api.model.MovieListResult
@@ -19,15 +21,8 @@ class MoviesRepository {
     private val api = RetrofitClient.apiService
 
 
-//    suspend fun getMovies(id: Int): MoviesApiResponse? {
-//        return withContext(Dispatchers.IO) {
-//            val response = api.getMovies(id)
-//            if (response.isSuccessful) response.body() else null
-//        }
-//    }
-
-    suspend fun getMovies(page: Int): MoviesApiResponse? = withContext(Dispatchers.IO) {
-        api.getMovies(page).body().takeIf { it != null }
+    suspend fun getMoviesByPage(page: Int): MoviesApiResponse? = withContext(Dispatchers.IO) {
+        api.getMoviesByPage(page).body().takeIf { it != null }
     }
 
 

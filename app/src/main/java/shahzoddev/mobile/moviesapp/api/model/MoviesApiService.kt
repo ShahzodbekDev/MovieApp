@@ -9,8 +9,10 @@ import retrofit2.http.Query
 interface MoviesApiService {
 
 
+
+
     @GET("movies")
-    suspend fun getMovies(
+    suspend fun getMoviesByPage(
         @Query("page") page: Int
     ): Response<MoviesApiResponse>
 
@@ -20,6 +22,7 @@ interface MoviesApiService {
         @Query("q") query: String,
         @Query("page") page: Int
     ): Response<MoviesApiResponse>
+
 
     @GET("movies/{id}")
     suspend fun getMovieById(@Path("id") id: String): Response<MovieResult>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    tools:context=".ui.user.UpdateProfileFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/transparent"
+        android:fontFamily="@font/roboto_bold"
+        android:padding="0dp"
+        android:textAllCaps="false"
+        android:textColor="@color/app_color"
+        android:textSize="14sp"
+        app:backgroundTint="@null"
+        app:icon="@drawable/back_ic"
+        app:iconTint="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/update_profile"
+        android:textAlignment="center"
+        android:textColor="@color/app_color"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/back" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/userAvatar"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/pick_avatar8"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerText" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/namelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:textColorHint="@color/text_color"
+        app:boxStrokeWidth="0dp"
+        android:layout_marginTop="35dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/userAvatar"
+        app:startIconDrawable="@drawable/ic_name_with_padding"
+        app:startIconTint="@color/text_color"
+        tools:layout_editor_absoluteX="32dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/updateName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_field_background"
+            android:fontFamily="@font/roboto_regular"
+            android:inputType="textPersonName"
+            android:hint="John Safwat"
+            android:paddingStart="66dp"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:hintTextColor="@color/text_color"
+            tools:ignore="RtlSymmetry" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/updatePhonelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:textColorHint="@color/text_color"
+        app:boxStrokeWidth="0dp"
+        android:layout_marginTop="20dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/namelayout"
+        app:startIconDrawable="@drawable/ic_phone_with_padding"
+        app:startIconTint="@color/text_color"
+        tools:layout_editor_absoluteX="32dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/updatePhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_field_background"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="+1 223 55 66 88"
+            android:inputType="phone"
+            android:paddingStart="66dp"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            app:hintTextColor="@color/text_color"
+            tools:ignore="RtlSymmetry" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/reset_rassword"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@+id/updatePhonelayout"
+        app:layout_constraintTop_toBottomOf="@+id/updatePhonelayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/deleteAccount"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/button_red_background"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginBottom="20dp"
+        android:text="@string/delete_account"
+        android:textAllCaps="false"
+        android:textColor="@color/text_color"
+        android:textSize="17sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/updateData" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/updateData"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/update_data"
+        android:textAllCaps="false"
+        android:textColor="@color/app_bg"
+        android:layout_marginBottom="54dp"
+        android:textSize="17sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

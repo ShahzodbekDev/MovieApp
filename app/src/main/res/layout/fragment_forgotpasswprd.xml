@@ -19,7 +19,7 @@
         android:textAllCaps="false"
         android:textColor="@color/app_color"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:textSize="14sp"
         app:backgroundTint="@color/app_bg"
         app:layout_constraintStart_toStartOf="parent"

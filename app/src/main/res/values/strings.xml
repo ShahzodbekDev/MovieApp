@@ -62,4 +62,13 @@
     <string name="detials_genres">Genres</string>
     <string name="detials_genres_name">%s</string>
     <string name="search_result_rating">%s</string>
+    <string name="browse_genres_name">%s</string>
+    <string name="filtered_resut_rating">%s</string>
+    <string name="user_edit_profile">Edit Profile</string>
+    <string name="user_exit">Exit</string>
+    <string name="update_profile">Edit Profile</string>
+    <string name="update_data">Update Data</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="reset_rassword">Reset Password</string>
+    <string name="create_account">Create Account</string>
 </resources>

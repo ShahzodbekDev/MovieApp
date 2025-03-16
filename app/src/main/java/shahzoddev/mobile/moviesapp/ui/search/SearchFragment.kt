@@ -9,6 +9,7 @@ import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
@@ -41,7 +42,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
 
-
             moviesViewModel = ViewModelProvider(this)[MoviesViewModel::class.java]
             searchAdapter = SearchAdapter(this@SearchFragment::onClick)
 
@@ -50,15 +50,28 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
                 layoutManager = GridLayoutManager(context, 2)
             }
 
-            // Qidiruv matnini kuzatish va yangilash
+
             binding.search.doOnTextChanged { text, _, _, _ ->
                 moviesViewModel.searchMovies(text.toString().trim())
             }
 
-            // PagingData ni kuzatish
-            lifecycleScope.launchWhenStarted {
+
+            lifecycleScope.launch {
                 moviesViewModel.searchResults.collectLatest { pagingData ->
                     searchAdapter.submitData(pagingData)
+                }
+
+
+            }
+
+
+            lifecycleScope.launch {
+                searchAdapter.loadStateFlow.collectLatest { loadStates ->
+
+                    binding.linearProgress.isVisible = loadStates.source.append is LoadState.Loading
+
+                    val isListEmpty = searchAdapter.snapshot().isEmpty() && loadStates.source.refresh is LoadState.NotLoading
+                    binding.searchEpty.isVisible = isListEmpty
                 }
             }
 

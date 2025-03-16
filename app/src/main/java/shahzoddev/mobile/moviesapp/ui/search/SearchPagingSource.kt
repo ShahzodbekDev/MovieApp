@@ -2,6 +2,7 @@ package shahzoddev.mobile.moviesapp.ui.search
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import kotlinx.coroutines.delay
 import shahzoddev.mobile.moviesapp.api.model.MovieListResult
 import shahzoddev.mobile.moviesapp.api.model.MoviesApiService
 
@@ -17,6 +18,7 @@ class SearchPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, MovieListResult> {
         val page = params.key ?: 1
         return try {
+            if (page != 1) delay(3000)
             val response = apiService.searchMovies(query, page)
             val movies = response.body()?.data ?: emptyList()
             LoadResult.Page(

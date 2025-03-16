@@ -172,6 +172,10 @@ class DetialsFragment : BaseFragment<FragmentDetialsBinding>(FragmentDetialsBind
                     val formatted = voteCount / 1000
                     String.format("%dk", formatted)
                 }
+                voteCount >= 10_000 -> {
+                    val formatted = voteCount / 1000
+                    String.format("%dk", formatted)
+                }
                 else -> voteCount.toString()
             }
         } catch (e: Exception) {
