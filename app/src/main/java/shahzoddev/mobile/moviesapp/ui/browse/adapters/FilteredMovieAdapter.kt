@@ -11,9 +11,10 @@ import shahzoddev.mobile.moviesapp.databinding.ItemFilteredMovieBrowseBinding
 class FilteredMovieAdapter(
     private var movies: List<MovieListResult>,
     private val onClick: (MovieListResult) -> Unit
-): RecyclerView.Adapter<FilteredMovieAdapter.MoviesViewHolder>() {
+) : RecyclerView.Adapter<FilteredMovieAdapter.MoviesViewHolder>() {
 
-    inner class MoviesViewHolder(private val binding: ItemFilteredMovieBrowseBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class MoviesViewHolder(private val binding: ItemFilteredMovieBrowseBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: MovieListResult) = with(binding) {
             movie.let {
                 Glide.with(root).load(movie.poster).into(filterdResultImage)
@@ -26,13 +27,13 @@ class FilteredMovieAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MoviesViewHolder (
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MoviesViewHolder(
         ItemFilteredMovieBrowseBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
+            LayoutInflater.from(parent.context),
+            parent,
+            false
         )
+    )
 
     override fun onBindViewHolder(holder: FilteredMovieAdapter.MoviesViewHolder, position: Int) =
         holder.bind(movies[position])

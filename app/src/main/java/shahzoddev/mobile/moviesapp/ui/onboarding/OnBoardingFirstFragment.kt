@@ -8,7 +8,8 @@ import shahzoddev.mobile.moviesapp.util.BaseFragment
 import shahzoddev.mobile.moviesapp.util.clearLightStatusBar
 
 
-class OnBoardingFirstFragment : BaseFragment<FragmentOnboardingFirstBinding>(FragmentOnboardingFirstBinding::inflate) {
+class OnBoardingFirstFragment :
+    BaseFragment<FragmentOnboardingFirstBinding>(FragmentOnboardingFirstBinding::inflate) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

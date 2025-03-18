@@ -8,20 +8,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import me.everything.android.ui.overscroll.OverScrollDecoratorHelper;
 
 public class OverscrollUtil {
-    
+
     /**
      * RecyclerView uchun overscroll effektini yoqish.
+     *
      * @param recyclerView RecyclerView obyekti
      * @param isHorizontal True bo‘lsa, horizontal, aks holda vertical
      */
     public static void enableRecyclerViewOverscroll(RecyclerView recyclerView, boolean isHorizontal) {
         int orientation = isHorizontal ? OverScrollDecoratorHelper.ORIENTATION_HORIZONTAL
-                                       : OverScrollDecoratorHelper.ORIENTATION_VERTICAL;
+                : OverScrollDecoratorHelper.ORIENTATION_VERTICAL;
         OverScrollDecoratorHelper.setUpOverScroll(recyclerView, orientation);
     }
 
     /**
      * ScrollView uchun overscroll effektini yoqish.
+     *
      * @param scrollView ScrollView obyekti
      */
     public static void enableScrollViewOverscroll(ScrollView scrollView) {

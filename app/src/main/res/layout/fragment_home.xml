@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/app_bg"
     android:layout_height="match_parent"
+    android:background="@color/app_bg"
     tools:context=".ui.home.HomeFragment">
 
 
@@ -19,111 +19,110 @@
 
     </com.facebook.shimmer.ShimmerFrameLayout>
 
-   <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-       android:id="@+id/swipeRefresh"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-       <ScrollView
-           android:id="@+id/home"
-           android:layout_width="match_parent"
-           android:clipToPadding="false"
-           android:clipChildren="false"
-           android:paddingBottom="120dp"
-           android:overScrollMode="never"
-           android:layout_height="match_parent">
-
-
-           <androidx.constraintlayout.widget.ConstraintLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content">
-
-               <androidx.constraintlayout.widget.ConstraintLayout
-                   android:id="@+id/bannerLayout"
-                   android:layout_width="match_parent"
-                   android:layout_height="500dp"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintTop_toTopOf="parent">
-
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="match_parent"
-                       android:gravity="center"
-                       android:orientation="vertical"
-                       android:background="@drawable/banner_gradient"
-                       android:elevation="2dp"
-                       app:layout_constraintEnd_toEndOf="parent"
-                       app:layout_constraintStart_toStartOf="parent"
-                       app:layout_constraintTop_toTopOf="parent">
-
-                       <androidx.viewpager2.widget.ViewPager2
-                           android:id="@+id/bannerView"
-                           android:layout_width="match_parent"
-                           android:layout_height="351dp" />
+        <ScrollView
+            android:id="@+id/home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingBottom="120dp">
 
 
-                   </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bannerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/banner_gradient"
+                        android:elevation="2dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/bannerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="351dp" />
 
 
-               </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
 
 
-               <TextView
-                   android:id="@+id/movieText"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:fontFamily="@font/roboto_regular"
-                   android:text="@string/home_fragment_movies"
-                   android:textColor="@color/text_color"
-                   android:textSize="20sp"
-                   android:layout_marginTop="-24dp"
-                   android:layout_marginStart="16dp"
-                   app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintTop_toBottomOf="@+id/bannerLayout" />
-
-               <com.google.android.material.button.MaterialButton
-                   android:id="@+id/seeMore"
-                   android:layout_width="wrap_content"
-                   android:layout_height="30dp"
-                   android:background="#00121312"
-                   android:fontFamily="@font/roboto_bold"
-                   android:padding="0dp"
-                   android:text="@string/home_fragment_see_more"
-                   android:drawableEnd="@drawable/ic_right"
-                   android:textAllCaps="false"
-                   android:textColor="@color/app_color"
-                   android:textSize="14sp"
-                   app:backgroundTint="@null"
-                   android:layout_marginEnd="16dp"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintBaseline_toBaselineOf="@id/movieText"
-                   app:layout_constraintTop_toBottomOf="@+id/bannerLayout" />
-
-               <androidx.recyclerview.widget.RecyclerView
-                   android:id="@+id/moviesList"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_marginTop="10dp"
-                   android:clipChildren="false"
-                   android:clipToPadding="false"
-                   android:orientation="horizontal"
-                   android:paddingHorizontal="16dp"
-                   app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintTop_toBottomOf="@+id/movieText"
-                   tools:listitem="@layout/item_home_movies" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-           </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/movieText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="-24dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/home_fragment_movies"
+                    android:textColor="@color/text_color"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bannerLayout" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/seeMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#00121312"
+                    android:drawableEnd="@drawable/ic_right"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="0dp"
+                    android:text="@string/home_fragment_see_more"
+                    android:textAllCaps="false"
+                    android:textColor="@color/app_color"
+                    android:textSize="14sp"
+                    app:backgroundTint="@null"
+                    app:layout_constraintBaseline_toBaselineOf="@id/movieText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bannerLayout" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/moviesList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/movieText"
+                    tools:listitem="@layout/item_home_movies" />
 
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-       </ScrollView>
+
+        </ScrollView>
 
 
-   </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -168,14 +168,17 @@ class DetialsFragment : BaseFragment<FragmentDetialsBinding>(FragmentDetialsBind
                     val formatted = voteCount / 1_000_000.0
                     String.format("%.1fmln", formatted)
                 }
+
                 voteCount >= 100_000 -> {
                     val formatted = voteCount / 1000
                     String.format("%dk", formatted)
                 }
+
                 voteCount >= 10_000 -> {
                     val formatted = voteCount / 1000
                     String.format("%dk", formatted)
                 }
+
                 else -> voteCount.toString()
             }
         } catch (e: Exception) {
@@ -185,15 +188,21 @@ class DetialsFragment : BaseFragment<FragmentDetialsBinding>(FragmentDetialsBind
 
 
     @RequiresApi(Build.VERSION_CODES.M)
-    private fun changeBgForScrull(){
+    private fun changeBgForScrull() {
         binding.detials.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
             if (scrollY > dpToPx(470)) {
-                binding.backSaveBlock.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.blur_effect))
+                binding.backSaveBlock.setBackground(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.blur_effect
+                    )
+                )
             } else {
                 binding.backSaveBlock.background = null
             }
         }
     }
+
     private fun dpToPx(dp: Int): Int {
         return (dp * resources.displayMetrics.density).toInt()
     }

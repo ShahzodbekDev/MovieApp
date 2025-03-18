@@ -8,7 +8,8 @@ import shahzoddev.mobile.moviesapp.util.BaseFragment
 import shahzoddev.mobile.moviesapp.util.finishActivity
 
 
-class OnBoardingThirdFragment : BaseFragment<FragmentOnboardingThirdBinding>(FragmentOnboardingThirdBinding::inflate) {
+class OnBoardingThirdFragment :
+    BaseFragment<FragmentOnboardingThirdBinding>(FragmentOnboardingThirdBinding::inflate) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

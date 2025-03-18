@@ -40,7 +40,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                     val nextItem = (binding.bannerView.currentItem + 1) % itemCount
                     binding.bannerView.setCurrentItem(nextItem, true)
                 }
-                postRunnable(this, 3000) 
+                postRunnable(this, 3000)
             }
         }
     }
@@ -159,7 +159,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                     .load(currentBanner.poster)
                     .transition(DrawableTransitionOptions.withCrossFade(1000))
                     .into(object : CustomTarget<Drawable>() {
-                        override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
+                        override fun onResourceReady(
+                            resource: Drawable,
+                            transition: Transition<in Drawable>?
+                        ) {
                             binding.bannerLayout.background = resource
                         }
 
@@ -170,7 +173,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
 
 
-        
+
         moviesHomeAdapter = MoviesHomeAdapter(emptyList(), this@HomeFragment::onClick)
         moviesList.apply {
             adapter = moviesHomeAdapter
@@ -199,8 +202,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             binding.swipeRefresh.isRefreshing = false
         }, 2000)
     }
-
-
 
 
 }

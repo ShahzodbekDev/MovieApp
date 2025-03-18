@@ -12,7 +12,7 @@ import shahzoddev.mobile.moviesapp.util.finishActivity
 class OnBoardingSixthFragment :
     BaseFragment<FragmentOnboardingSixthBinding>(FragmentOnboardingSixthBinding::inflate) {
 
-        private lateinit var preferencesHelper: PreferencesHelper
+    private lateinit var preferencesHelper: PreferencesHelper
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -22,9 +22,9 @@ class OnBoardingSixthFragment :
 
 
 
-       binding.finish.setOnClickListener {
+        binding.finish.setOnClickListener {
 
-           preferences.setOnBoardingCompleted(true)
+            preferences.setOnBoardingCompleted(true)
             findNavController().navigate(OnBoardingSixthFragmentDirections.actionOnBoardingSixthFragmentToLoginFragment())
         }
 
@@ -33,8 +33,6 @@ class OnBoardingSixthFragment :
         }
 
     }
-
-
 
 
 }

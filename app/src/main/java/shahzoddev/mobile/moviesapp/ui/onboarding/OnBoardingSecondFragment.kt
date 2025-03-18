@@ -7,7 +7,8 @@ import shahzoddev.mobile.moviesapp.databinding.FragmentOnboardingSecondBinding
 import shahzoddev.mobile.moviesapp.util.BaseFragment
 
 
-class OnBoardingSecondFragment : BaseFragment<FragmentOnboardingSecondBinding>(FragmentOnboardingSecondBinding::inflate) {
+class OnBoardingSecondFragment :
+    BaseFragment<FragmentOnboardingSecondBinding>(FragmentOnboardingSecondBinding::inflate) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

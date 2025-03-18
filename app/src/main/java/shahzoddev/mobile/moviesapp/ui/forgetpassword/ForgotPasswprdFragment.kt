@@ -9,7 +9,8 @@ import shahzoddev.mobile.moviesapp.databinding.FragmentForgotpasswprdBinding
 import shahzoddev.mobile.moviesapp.util.BaseFragment
 
 
-class ForgotPasswprdFragment : BaseFragment<FragmentForgotpasswprdBinding>(FragmentForgotpasswprdBinding::inflate) {
+class ForgotPasswprdFragment :
+    BaseFragment<FragmentForgotpasswprdBinding>(FragmentForgotpasswprdBinding::inflate) {
 
     private lateinit var preferencesHelper: PreferencesHelper
 
@@ -21,7 +22,7 @@ class ForgotPasswprdFragment : BaseFragment<FragmentForgotpasswprdBinding>(Fragm
         val emailText = binding.email.text
 
         binding.fogetPasVerifyEmail.setOnClickListener {
-            if (emailText.toString() ==  preferencesHelper.getEmail()){
+            if (emailText.toString() == preferencesHelper.getEmail()) {
                 findNavController().navigate(ForgotPasswprdFragmentDirections.actionForgotPasswprdFragmentToHomeFragment())
             } else {
                 binding.email.setBackgroundResource(R.drawable.input_field_erorr_background)

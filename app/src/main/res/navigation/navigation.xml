@@ -6,12 +6,11 @@
     app:startDestination="@+id/splashFragment">
 
 
-
     <fragment
         android:id="@+id/splashFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_onBoardingFirstFragment"
             app:destination="@id/onBoardingFirstFragment"
@@ -30,7 +29,7 @@
         android:id="@+id/onBoardingFirstFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.onboarding.OnBoardingFirstFragment"
         android:label="fragment_onboarding_first"
-        tools:layout="@layout/fragment_onboarding_first" >
+        tools:layout="@layout/fragment_onboarding_first">
         <action
             android:id="@+id/action_onBoardingFirstFragment_to_onBoardingSecondFragment"
             app:destination="@id/onBoardingSecondFragment"
@@ -41,7 +40,7 @@
         android:id="@+id/onBoardingSecondFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.onboarding.OnBoardingSecondFragment"
         android:label="fragment_onboarding_second"
-        tools:layout="@layout/fragment_onboarding_second" >
+        tools:layout="@layout/fragment_onboarding_second">
         <action
             android:id="@+id/action_onBoardingSecondFragment_to_onBoardingThirdFragment"
             app:destination="@id/onBoardingThirdFragment"
@@ -52,7 +51,7 @@
         android:id="@+id/onBoardingThirdFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.onboarding.OnBoardingThirdFragment"
         android:label="fragment_onboarding_third"
-        tools:layout="@layout/fragment_onboarding_third" >
+        tools:layout="@layout/fragment_onboarding_third">
         <action
             android:id="@+id/action_onBoardingThirdFragment_to_onBoardingFourthFragment"
             app:destination="@id/onBoardingFourthFragment"
@@ -63,7 +62,7 @@
         android:id="@+id/onBoardingFourthFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.onboarding.OnBoardingFourthFragment"
         android:label="fragment_onboarding_fourth"
-        tools:layout="@layout/fragment_onboarding_fourth" >
+        tools:layout="@layout/fragment_onboarding_fourth">
         <action
             android:id="@+id/action_onBoardingFourthFragment_to_onBoardingFifthFragment"
             app:destination="@id/onBoardingFifthFragment"
@@ -74,7 +73,7 @@
         android:id="@+id/onBoardingFifthFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.onboarding.OnBoardingFifthFragment"
         android:label="fragment_onboarding_fifth"
-        tools:layout="@layout/fragment_onboarding_fifth" >
+        tools:layout="@layout/fragment_onboarding_fifth">
         <action
             android:id="@+id/action_onBoardingFifthFragment_to_onBoardingSixthFragment"
             app:destination="@id/onBoardingSixthFragment"
@@ -85,7 +84,7 @@
         android:id="@+id/onBoardingSixthFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.onboarding.OnBoardingSixthFragment"
         android:label="fragment_onboarding_sixth"
-        tools:layout="@layout/fragment_onboarding_sixth" >
+        tools:layout="@layout/fragment_onboarding_sixth">
         <action
             android:id="@+id/action_onBoardingSixthFragment_to_loginFragment"
             app:destination="@id/loginFragment"
@@ -96,7 +95,7 @@
         android:id="@+id/loginFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment"
@@ -115,7 +114,7 @@
         android:id="@+id/registerFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.register.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
+        tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment"
@@ -131,7 +130,7 @@
         android:id="@+id/pickAvatarFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.register.PickAvatarFragment"
         android:label="fragment_pickavatar"
-        tools:layout="@layout/fragment_pickavatar" >
+        tools:layout="@layout/fragment_pickavatar">
         <action
             android:id="@+id/action_pickAvatarFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -140,7 +139,7 @@
         android:id="@+id/forgotPasswprdFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.forgetpassword.ForgotPasswprdFragment"
         android:label="fragment_forgotpasswprd"
-        tools:layout="@layout/fragment_forgotpasswprd" >
+        tools:layout="@layout/fragment_forgotpasswprd">
         <action
             android:id="@+id/action_forgotPasswprdFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -149,7 +148,7 @@
         android:id="@+id/homeFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
 
         <action
             android:id="@+id/action_detialsFragment"
@@ -160,7 +159,7 @@
         android:id="@+id/searchFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" >
+        tools:layout="@layout/fragment_search">
 
         <action
             android:id="@+id/action_detialsFragment"
@@ -170,7 +169,7 @@
         android:id="@+id/browseFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.browse.BrowseFragment"
         android:label="fragment_browse"
-        tools:layout="@layout/fragment_browse" >
+        tools:layout="@layout/fragment_browse">
         <action
             android:id="@+id/action_detialsFragment"
             app:destination="@id/detialsFragment" />
@@ -179,7 +178,7 @@
         android:id="@+id/userFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.user.UserFragment"
         android:label="fragment_user"
-        tools:layout="@layout/fragment_user" >
+        tools:layout="@layout/fragment_user">
         <action
             android:id="@+id/action_detialsFragment"
             app:destination="@id/detialsFragment" />
@@ -194,11 +193,11 @@
         android:id="@+id/detialsFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.detials.DetialsFragment"
         android:label="fragment_detials"
-        tools:layout="@layout/fragment_detials" >
+        tools:layout="@layout/fragment_detials">
 
         <argument
             android:name="id"
-            app:argType="string"/>
+            app:argType="string" />
 
         <action
             android:id="@+id/action_detialsFragment"
@@ -208,6 +207,5 @@
         android:id="@+id/updateProfileFragment"
         android:name="shahzoddev.mobile.moviesapp.ui.user.UpdateProfileFragment"
         android:label="fragment_updateprofile"
-        tools:layout="@layout/fragment_updateprofile" >
-    </fragment>
+        tools:layout="@layout/fragment_updateprofile"></fragment>
 </navigation>

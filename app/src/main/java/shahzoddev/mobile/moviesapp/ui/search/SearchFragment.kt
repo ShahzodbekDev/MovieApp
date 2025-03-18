@@ -39,46 +39,47 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
         moviesViewModel = ViewModelProvider(this)[MoviesViewModel::class.java]
     }
 
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            super.onViewCreated(view, savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-            moviesViewModel = ViewModelProvider(this)[MoviesViewModel::class.java]
-            searchAdapter = SearchAdapter(this@SearchFragment::onClick)
+        moviesViewModel = ViewModelProvider(this)[MoviesViewModel::class.java]
+        searchAdapter = SearchAdapter(this@SearchFragment::onClick)
 
-            binding.searchResultList.apply {
-                adapter = searchAdapter
-                layoutManager = GridLayoutManager(context, 2)
+        binding.searchResultList.apply {
+            adapter = searchAdapter
+            layoutManager = GridLayoutManager(context, 2)
+        }
+
+
+        binding.search.doOnTextChanged { text, _, _, _ ->
+            moviesViewModel.searchMovies(text.toString().trim())
+        }
+
+
+        lifecycleScope.launch {
+            moviesViewModel.searchResults.collectLatest { pagingData ->
+                searchAdapter.submitData(pagingData)
             }
 
-
-            binding.search.doOnTextChanged { text, _, _, _ ->
-                moviesViewModel.searchMovies(text.toString().trim())
-            }
-
-
-            lifecycleScope.launch {
-                moviesViewModel.searchResults.collectLatest { pagingData ->
-                    searchAdapter.submitData(pagingData)
-                }
-
-
-            }
-
-
-            lifecycleScope.launch {
-                searchAdapter.loadStateFlow.collectLatest { loadStates ->
-
-                    binding.linearProgress.isVisible = loadStates.source.append is LoadState.Loading
-
-                    val isListEmpty = searchAdapter.snapshot().isEmpty() && loadStates.source.refresh is LoadState.NotLoading
-                    binding.searchEpty.isVisible = isListEmpty
-                }
-            }
 
         }
 
 
-    private fun onClick(movie : MovieListResult){
+        lifecycleScope.launch {
+            searchAdapter.loadStateFlow.collectLatest { loadStates ->
+
+                binding.linearProgress.isVisible = loadStates.source.append is LoadState.Loading
+
+                val isListEmpty = searchAdapter.snapshot()
+                    .isEmpty() && loadStates.source.refresh is LoadState.NotLoading
+                binding.searchEpty.isVisible = isListEmpty
+            }
+        }
+
+    }
+
+
+    private fun onClick(movie: MovieListResult) {
         findNavController().navigate(SearchFragmentDirections.actionDetialsFragment(movie.id.toString()))
     }
 

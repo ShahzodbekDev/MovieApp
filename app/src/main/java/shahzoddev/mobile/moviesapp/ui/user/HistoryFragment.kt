@@ -10,8 +10,4 @@ import shahzoddev.mobile.moviesapp.databinding.FragmentHistoryBinding
 import shahzoddev.mobile.moviesapp.util.BaseFragment
 
 
-class HistoryFragment : BaseFragment<FragmentHistoryBinding>(FragmentHistoryBinding::inflate) {
-
-
-
-}
+class HistoryFragment : BaseFragment<FragmentHistoryBinding>(FragmentHistoryBinding::inflate) {}

@@ -10,28 +10,29 @@ import shahzoddev.mobile.moviesapp.R
 import shahzoddev.mobile.moviesapp.api.model.MovieListResult
 import shahzoddev.mobile.moviesapp.databinding.ItemSearchResultBinding
 
-class MovieDiffUtils(): DiffUtil.ItemCallback<MovieListResult>(){
+class MovieDiffUtils() : DiffUtil.ItemCallback<MovieListResult>() {
     override fun areItemsTheSame(
         oldItem: MovieListResult,
         newItem: MovieListResult
     ): Boolean {
-        return  oldItem == newItem
+        return oldItem == newItem
     }
 
     override fun areContentsTheSame(
         oldItem: MovieListResult,
         newItem: MovieListResult
     ): Boolean {
-        return  oldItem == newItem
+        return oldItem == newItem
     }
 
 }
 
 class SearchAdapter(
     private val onClick: (MovieListResult) -> Unit
-) : PagingDataAdapter< MovieListResult,SearchAdapter.ViewHolder>(MovieDiffUtils()) {
+) : PagingDataAdapter<MovieListResult, SearchAdapter.ViewHolder>(MovieDiffUtils()) {
 
-    inner class ViewHolder(val binding: ItemSearchResultBinding): RecyclerView.ViewHolder(binding.root){
+    inner class ViewHolder(val binding: ItemSearchResultBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(result: MovieListResult?) = with(binding) {
             result?.let { movie ->
                 Glide.with(root).load(movie.poster).into(searchResultImage)
@@ -48,12 +49,12 @@ class SearchAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ) = ViewHolder (
-        ItemSearchResultBinding.inflate(LayoutInflater.from(parent.context), parent,false)
+    ) = ViewHolder(
+        ItemSearchResultBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
     override fun onBindViewHolder(holder: SearchAdapter.ViewHolder, position: Int) {
-       holder.bind(getItem(position))
+        holder.bind(getItem(position))
     }
 
 

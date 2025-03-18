@@ -22,9 +22,9 @@
         android:imeOptions="actionSearch"
         android:inputType="text"
         android:paddingHorizontal="25dp"
+        android:textColor="@color/text_color"
         android:textColorHint="@color/text_color"
         android:textSize="20sp"
-        android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

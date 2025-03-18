@@ -9,8 +9,6 @@ import retrofit2.http.Query
 interface MoviesApiService {
 
 
-
-
     @GET("movies")
     suspend fun getMoviesByPage(
         @Query("page") page: Int

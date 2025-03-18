@@ -19,7 +19,7 @@ abstract class BaseFragment<VB : ViewBinding>(
     var _binding: VB? = null
     val binding get() = _binding ?: throw IllegalStateException("Binding is not available")
 
-    // ✅ Umumiy Handler va Runnable list
+
     private val handler = Handler(Looper.getMainLooper())
     private val runnables = mutableListOf<Runnable>()
 
@@ -32,17 +32,13 @@ abstract class BaseFragment<VB : ViewBinding>(
         return requireNotNull(_binding).root
     }
 
-    /**
-     * ✅ Runnable'ni rejalashtirish uchun umumiy funksiya
-     */
+
     protected fun postRunnable(runnable: Runnable, delayMillis: Long) {
         runnables.add(runnable)
         handler.postDelayed(runnable, delayMillis)
     }
 
-    /**
-     * ✅ Barcha runnable'larni to‘xtatish
-     */
+
     fun clearRunnables() {
         runnables.forEach { handler.removeCallbacks(it) }
         runnables.clear()
@@ -50,7 +46,7 @@ abstract class BaseFragment<VB : ViewBinding>(
 
     override fun onDestroyView() {
         super.onDestroyView()
-        clearRunnables() // ✅ Fragment yo‘qolayotganda barcha runnable'larni o‘chirish
+        clearRunnables()
         _binding = null
     }
 

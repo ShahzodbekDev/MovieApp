@@ -124,15 +124,15 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
         android:background="@color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonBlock"
-        app:tabIconTint="@color/app_color"
-        app:tabTextColor="@color/text_color"
         app:tabGravity="fill"
-        app:tabMode="fixed" />
+        app:tabIconTint="@color/app_color"
+        app:tabMode="fixed"
+        app:tabTextColor="@color/text_color" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"

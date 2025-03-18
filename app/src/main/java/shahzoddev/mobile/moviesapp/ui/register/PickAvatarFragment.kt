@@ -37,7 +37,6 @@ class PickAvatarFragment :
             card9
         )
 
-
         cardList.forEach { card ->
             card.setOnClickListener {
 
@@ -58,7 +57,7 @@ class PickAvatarFragment :
                     else -> 1
                 }
 
-                    preferencesHelper.setPickAvatar(selectedCardId)
+                preferencesHelper.setPickAvatar(selectedCardId)
 
             }
         }

@@ -30,25 +30,18 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
 
         Handler().postDelayed({
 
-            if (preferences.isOnBoardingCompleted() && preferences.isOnLoginCompleted()){
+            if (preferences.isOnBoardingCompleted() && preferences.isOnLoginCompleted()) {
                 findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
-            }else if (preferences.isOnBoardingCompleted()){
+            } else if (preferences.isOnBoardingCompleted()) {
                 findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToLoginFragment())
             } else {
                 findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToOnBoardingFirstFragment())
             }
 
 
-
         }, 1000)
 
     }
-
-
-
-
-
-
 
 
 }

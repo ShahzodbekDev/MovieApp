@@ -26,7 +26,6 @@ class BrowseFragment : BaseFragment<FragmentBrowseBinding>(FragmentBrowseBinding
     private var selectedGenre: Genre? = null
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         moviesViewModel = ViewModelProvider(this)[MoviesViewModel::class.java]
@@ -42,7 +41,6 @@ class BrowseFragment : BaseFragment<FragmentBrowseBinding>(FragmentBrowseBinding
         initUI()
 
 
-
     }
 
 
@@ -50,12 +48,13 @@ class BrowseFragment : BaseFragment<FragmentBrowseBinding>(FragmentBrowseBinding
 
         browseGenresAdapter = BrowseGenresAdapter(emptyList(), this@BrowseFragment::onClickGenre)
         genresList.adapter = browseGenresAdapter
-        genresList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        genresList.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-        filteredMoviesAdapter = FilteredMovieAdapter(emptyList() ,this@BrowseFragment::onClick)
+        filteredMoviesAdapter = FilteredMovieAdapter(emptyList(), this@BrowseFragment::onClick)
         browseMovieList.apply {
             layoutManager = GridLayoutManager(context, 2)
-           adapter = filteredMoviesAdapter
+            adapter = filteredMoviesAdapter
         }
 
 
@@ -68,7 +67,7 @@ class BrowseFragment : BaseFragment<FragmentBrowseBinding>(FragmentBrowseBinding
             }
         }
 
-        moviesViewModel.movies.observe(viewLifecycleOwner){movie ->
+        moviesViewModel.movies.observe(viewLifecycleOwner) { movie ->
             filteredMoviesAdapter.updateData(movie)
         }
 
@@ -78,8 +77,8 @@ class BrowseFragment : BaseFragment<FragmentBrowseBinding>(FragmentBrowseBinding
         findNavController().navigate(BrowseFragmentDirections.actionDetialsFragment(movie.id.toString()))
     }
 
-    private fun onClickGenre(genre: Genre){
-            selectedGenre = genre
-            browseGenresAdapter.setSelectedGenre(genre)
+    private fun onClickGenre(genre: Genre) {
+        selectedGenre = genre
+        browseGenresAdapter.setSelectedGenre(genre)
     }
 }

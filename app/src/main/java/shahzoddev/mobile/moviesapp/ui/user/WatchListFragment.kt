@@ -10,6 +10,4 @@ import shahzoddev.mobile.moviesapp.databinding.FragmentWatchlistBinding
 import shahzoddev.mobile.moviesapp.util.BaseFragment
 
 
-class WatchListFragment : BaseFragment<FragmentWatchlistBinding>(FragmentWatchlistBinding::inflate) {
-
-}
+class WatchListFragment : BaseFragment<FragmentWatchlistBinding>(FragmentWatchlistBinding::inflate) {}

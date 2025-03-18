@@ -1,5 +1,6 @@
 package shahzoddev.mobile.moviesapp.ui.browse.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -9,10 +10,11 @@ import shahzoddev.mobile.moviesapp.api.model.Genre
 import shahzoddev.mobile.moviesapp.databinding.ItemBrowseGenresBinding
 
 class BrowseGenresAdapter(
-    private var genres: List<Genre>,  val onGenreClick: (genre : Genre) -> Unit
+    private var genres: List<Genre>, val onGenreClick: (genre: Genre) -> Unit
 ) : RecyclerView.Adapter<BrowseGenresAdapter.ViewHolder>() {
 
     private var selectedGenre: Genre? = null
+
 
     fun setSelectedGenre(genre: Genre) {
         selectedGenre = genre
@@ -28,10 +30,14 @@ class BrowseGenresAdapter(
             }
 
             if (selectedGenre == genre) {
-                root.background = ContextCompat.getDrawable(root.context, R.drawable.browse_selected_genres_background)
+                root.background = ContextCompat.getDrawable(
+                    root.context,
+                    R.drawable.browse_selected_genres_background
+                )
                 genresName.setTextColor(ContextCompat.getColor(root.context, R.color.black))
             } else {
-                root.background = ContextCompat.getDrawable(root.context, R.drawable.browse_genres_background)
+                root.background =
+                    ContextCompat.getDrawable(root.context, R.drawable.browse_genres_background)
                 genresName.setTextColor(ContextCompat.getColor(root.context, R.color.app_color))
             }
 
@@ -39,7 +45,8 @@ class BrowseGenresAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemBrowseGenresBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemBrowseGenresBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 

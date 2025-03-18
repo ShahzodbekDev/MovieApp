@@ -45,7 +45,7 @@ class MoviesViewModel() : ViewModel() {
     val isLoading: LiveData<Boolean> get() = _isLoading
 
 
-    fun loadMovies(page:Int) {
+    fun loadMovies(page: Int) {
         _isLoading.value = true
         viewModelScope.launch {
             delay(1000)
@@ -91,8 +91,6 @@ class MoviesViewModel() : ViewModel() {
     fun searchMovies(query: String) {
         _searchQuery.value = query
     }
-
-
 
 
 }

@@ -41,7 +41,6 @@ class BannerAdapter(
         holder.bind(banner[position])
 
 
-
     override fun getItemCount() = banner.size
 
     fun getItem(position: Int): MovieListResult {
@@ -53,7 +52,6 @@ class BannerAdapter(
         banner = newList
         notifyDataSetChanged()
     }
-
 
 
 }
